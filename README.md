@@ -1,4 +1,4 @@
 Crowdspell
 ==========
 
-Hi there! Full documentation and readme is provided at [http://crowdspell.se](http://crowdspell.se) currently.
+Hi there! Full documentation and readme is currently provided at [http://crowdspell.se](http://crowdspell.se).
