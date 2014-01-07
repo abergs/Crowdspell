@@ -23,6 +23,7 @@
 
 #crowdspell-editor h3 {
     margin-top: 0;
+    color: inherit;
 }
 
 #crowdspell-editor .crowdspell-label {
@@ -88,8 +89,10 @@ a.crowdspell-button {
     transition: all 250ms ease-in-out;
 }
 
-a.crowdspell-button:visited {
+a.crowdspell-button:visited,
+a.crowdspell-button:hover {
     color: #fff;
+    text-decoration: none;
 }
 
 .text-options {
