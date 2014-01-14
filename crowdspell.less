@@ -91,8 +91,9 @@ a.crowdspell-button {
     -o-transition: all 250ms ease-in-out;
     transition: all 250ms ease-in-out;
 
-    &:visited {
+    &:visited,&:hover {
         color:#fff;
+        text-decoration:none;
     }
 }
 
@@ -153,4 +154,7 @@ a.crowdspell-button {
         height: 5px;
         width: 0px;
         left: 50%;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
     }

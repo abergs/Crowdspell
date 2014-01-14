@@ -151,4 +151,7 @@ a.crowdspell-button:hover {
     height: 5px;
     width: 0px;
     left: 50%;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
