@@ -209,9 +209,14 @@
 
         Editor.prototype.SetupButtonEvent = function () {
             var _this = this;
+            this.editor.addEventListener("keydown", function (keyEvent) {
+                if (keyEvent.keyCode === 27) {
+                    _this.Close(null);
+                }
+            });
+
             this.closeButton.onclick = function (ev) {
-                _this.Hide();
-                _this.closeCallback(null);
+                _this.Close(null);
             };
 
             var saveButton = document.getElementById("crowdspell-button-save");
@@ -228,9 +233,13 @@
                     corr.Context = _this.anchorNode.textContent.substr(0, 140);
                 }
 
-                _this.Hide();
-                _this.closeCallback(corr);
+                _this.Close(corr);
             };
+        };
+
+        Editor.prototype.Close = function (callBackArgument) {
+            this.Hide();
+            this.closeCallback(callBackArgument);
         };
 
         Editor.prototype.Hide = function () {
@@ -323,3 +332,4 @@
     var StaticResources = new Resources();
     var _crowdSpell = new CrowdSpellApp();
 })(CrowdSpell || (CrowdSpell = {}));
+//# sourceMappingURL=crowdspell.js.map

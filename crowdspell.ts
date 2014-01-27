@@ -42,7 +42,7 @@
             this.activeCorrection = new CorrectionEntity();
             this.button.Disable();
             this.button.Hide();
-            
+
             this.editor.Show(selection, event.pageY);
         }
 
@@ -221,9 +221,14 @@
         }
 
         private SetupButtonEvent() {
+            this.editor.addEventListener("keydown", (keyEvent: KeyboardEvent) => {
+                if (keyEvent.keyCode === 27) {
+                    this.Close(null);
+                }
+            });
+
             this.closeButton.onclick = (ev: MouseEvent) => {
-                this.Hide();
-                this.closeCallback(null);
+                this.Close(null);
             };
 
             var saveButton = document.getElementById("crowdspell-button-save");
@@ -239,10 +244,14 @@
                 if (this.anchorNode != null) {
                     corr.Context = this.anchorNode.textContent.substr(0, 140);
                 }
-                
-                this.Hide();
-                this.closeCallback(corr);
+
+                this.Close(corr);
             }
+        }
+
+        public Close(callBackArgument: CorrectionEntity) {
+            this.Hide();
+            this.closeCallback(callBackArgument);
         }
 
         public Hide() {
